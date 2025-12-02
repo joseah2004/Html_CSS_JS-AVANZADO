@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportFlex</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0a2a5f;
+      padding: 16px 32px;
+      color: white;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff9800;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #0a2a5f;
+        display: none;
+        padding: 24px 24px 24px 24px;
+        box-sizing: border-box;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .hero {
+      background: url('https://www.vivaplaya.net/viva/wp-content/uploads/2022/04/amanecer-playa-del-carmen-viva-playa.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 64px 32px;
+      box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 19px;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .news-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      padding: 32px;
+      align-items: stretch;
+    }
+
+    .news-card {
+      flex: 1 1 300px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .news-card .content {
+      padding: 16px;
+    }
+
+    .news-card h3 {
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+   
+    footer {
+      text-align: center;
+      padding: 16px;
+      background-color: #000000;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">SportFlex</h1>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="Ejercicio4_2_2.html">Inicio</a></li>
+        <li><a href="#">Noticias</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h2>Bienvenido a SportFlex</h2>
+      <p>Tu portal con las últimas noticias deportivas</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="news-container" id="news-container">
+    </section>
+  </main>
+
+  <footer>
+  <p>© 2025 <a href="https://www.sportflex.com" target="_blank" style="color:rgb(22, 96, 182); text-decoration:none;">SportFlex</a> – Todos los derechos reservados.</p>
+</footer>
+
+
+  <script>
+    const noticias = [
+      {
+        titulo: "Final Épica de la Champions",
+        descripcion: "El Real Madrid conquista su 15ª Champions tras un partido histórico frente al Manchester City.",
+        imagen: "https://image.ondacero.es/clipping/cmsimages01/2022/05/05/17BFF525-BB0C-4CA0-8F55-5ACD132960E9/sergio-ramos-levanta-champions-ganar-final-2018_98.jpg?crop=5082,2859,x0,y139&width=1900&height=1069&optimize=high&format=webply"
+
+      },
+      {
+        titulo: "Récord Mundial de Baloncesto",
+        descripcion: "La jugadora española María López rompe el récord de 400 metros planos en los Juegos Europeos.",
+        imagen: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d"
+      },
+      {
+        titulo: "Nueva Era en el Ciclismo",
+        descripcion: "Lucía Gómez, de 17 años, deslumbra en su debut profesional.",
+        imagen: "https://images.unsplash.com/photo-1517649763962-0c623066013b"
+      }
+    ];
+
+    const container = document.getElementById("news-container");
+
+    noticias.forEach(noticia => {
+      const card = document.createElement("div");
+      card.className = "news-card";
+
+      card.innerHTML = `
+        <img src="${noticia.imagen}" alt="${noticia.titulo}">
+        <div class="content">
+          <h3>${noticia.titulo}</h3>
+          <p>${noticia.descripcion}</p>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
+
+</html>

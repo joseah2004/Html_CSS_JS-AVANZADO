@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Preguntas frecuentes</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+   <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>
+        <a href="#">Institutos</a>
+        <ul>
+          <li><a href="instituto1.html">IES Alonso de Avellaneda</a></li>
+          <li><a href="instituto2.html">IES Cervantes</a></li>
+          <li><a href="instituto3.html">IES San Isidro</a></li>
+          <li><a href="instituto4.html">IES Calderón de la Barca</a></li>
+        </ul>
+      </li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li>
+        <a href="contactos.html">Contacto</a>
+        <ul>
+          <li><a href="contactos.html#email">Email</a></li>
+          <li><a href="contactos.html#mapa">Mapa</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Preguntas Frecuentes</h2>
+    <p>Aquí encontrarás las respuestas a las preguntas más comunes.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faqs">
+          ¿Cómo puedo contactar con un instituto?
+          <span class="faq-symbol">+</span>
+        </div>
+        <div class="faq-answer">Puedes ir al menú superior y seleccionar ‘Contacto’. Allí encontrarás email y mapa de ubicación.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faqs">
+          ¿Dónde están los horarios de los centros?
+          <span class="faq-symbol">+</span>
+        </div>
+        <div class="faq-answer">Consulta la página individual de cada instituto para horarios actualizados.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faqs">
+          ¿Qué estudios ofrece cada centro?
+          <span class="faq-symbol">+</span>
+        </div>
+        <div class="faq-answer">Cada centro ofrece ciclos y programas distintos. Visita la página individual del instituto para ver la oferta educativa.</div>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.querySelectorAll('.dropdown-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.dropdown-content').forEach(menu => {
+          if(menu !== this.nextElementSibling) menu.style.display = 'none';
+        });
+        const menu = this.nextElementSibling;
+        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if(!e.target.classList.contains('dropdown-btn')) {
+        document.querySelectorAll('.dropdown-content').forEach(menu => {
+          menu.style.display = 'none';
+        });
+      }
+    });
+    document.querySelectorAll('.dropdown-content').forEach(menu => {
+      menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    });
+    document.querySelectorAll('.faqs').forEach(el => {
+      el.addEventListener('click', function() {
+        const item = el.parentElement;
+        item.classList.toggle('active');
+        const symbol = el.querySelector('.faq-symbol');
+        symbol.textContent = item.classList.contains('active') ? '×' : '+';
+      });
+    });
+  </script>
+</body>
+</html>

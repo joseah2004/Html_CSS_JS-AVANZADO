@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjetas Flexbox</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .bienvenida {
+      text-align: center;
+      margin-top: 100px;
+      padding: 20px;
+      font-size: 1.2rem;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      margin: 40px auto;
+      flex-wrap: wrap;
+      max-width: 900px;
+    }
+
+    .card {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      width: 200px;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .middle {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .autor {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="card-container">
+    <div class="card">
+      <img src="foto1.jpg" alt="Ana López">
+      <h3>Ana López</h3>
+      <p>Diseñadora UX/UI</p>
+    </div>
+    <div class="card middle">
+      <img src="foto2.jpg" alt="Juan Pérez">
+      <h3>Juan Pérez</h3>
+      <p>Desarrollador Frontend</p>
+    </div>
+    <div class="card">
+      <img src="foto3.jpg" alt="Carmen Díaz">
+      <h3>Carmen Díaz</h3>
+      <p>Marketing Digital</p>
+    </div>
+  </div>
+
+  <div class="autor">
+    <h2>Jose Antonio Herrera</h2>
+    <p>Ejercicio Nivel Medio CSS</p>
+  </div>
+</body>
+</html>

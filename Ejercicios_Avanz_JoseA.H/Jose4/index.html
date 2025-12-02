@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Películas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Galería de Películas</h1>
+        <p>Los datos se cargan dinámicamente desde un fichero JSON.</p>
+    </header>
+
+    <main id="galeria"></main>
+
+    <!-- <footer> lo iba a hacer pero no era necesario
+        <p>&copy; 2024 Galería de Películas Jose Antonio Herrera</p>
+    </footer> -->
+    <script>
+        function cargarPeliculas(peliculas) {
+            const contenedor = document.getElementById("galeria");
+
+            peliculas.forEach(peli => {
+                const tarjeta = document.createElement("div");
+                tarjeta.className = "tarjeta";
+
+                tarjeta.innerHTML = `
+            <img src="${peli.imagen}" alt="${peli.titulo}">
+            <h2>${peli.titulo}</h2>
+            <p><strong>Año:</strong> ${peli.anio}</p>
+            <p><strong>Género:</strong> ${peli.genero}</p>
+        `;
+
+                contenedor.appendChild(tarjeta);
+            });
+        }
+
+        fetch("info.json")
+        .then(respuesta=>{
+            if(!respuesta.ok){
+                throw new Error("HTTP ERROR" + respuesta.status);
+            }
+            return respuesta.json();
+        })
+
+        .then(datos => {
+            cargarPeliculas(datos);
+        })
+
+        .catch(error =>{
+            const contenedor = document.getElementById("galeria");
+            contenedor.innerHTML="<p style='color:red'>Error cargando el JSON. <\p>";
+                console.error("Error",error)
+        })
+
+    </script>
+</body>
+
+</html>

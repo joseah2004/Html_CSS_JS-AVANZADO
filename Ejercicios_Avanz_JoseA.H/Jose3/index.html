@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel Pantalla Completa</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #111;
+            font-family: sans-serif;
+            min-height: 100vh;
+        }
+
+        .carrusel {
+            width: 100%;
+            height: 100vh;
+            /* ocupa toda la pantalla */
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .carrusel input[type="radio"] {
+            display: none;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.6s ease;
+        }
+
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+            position: relative;
+            color: white;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            filter: brightness(0.7);
+        }
+
+ .slide-content {
+  position: absolute;
+  top: 50%;              
+  left: 50px;           
+  right: 40px;           
+  transform: translateY(-50%); 
+  color: white;
+  text-align: left;
+}
+
+.slide-content h2 {
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.slide-content p {
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+
+
+        .slide-content h2 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .slide-content p {
+            font-size: 40px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            line-height: 1;
+            z-index: 10;
+            user-select: none;
+        }
+
+        .arrow-left {
+            left: 20px;
+        }
+
+        .arrow-right {
+            right: 20px;
+        }
+
+        .nav-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .nav-dots label {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-dots label:hover {
+            background: white;
+        }
+
+        #slide1:checked~.slides {
+            transform: translateX(0%);
+        }
+
+        #slide2:checked~.slides {
+            transform: translateX(-100%);
+        }
+
+        #slide3:checked~.slides {
+            transform: translateX(-200%);
+        }
+
+        #slide1:checked~.nav-dots label[for="slide1"],
+        #slide2:checked~.nav-dots label[for="slide2"],
+        #slide3:checked~.nav-dots label[for="slide3"] {
+            background: white;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carrusel">
+        <!-- Radios -->
+        <input type="radio" name="slides" id="slide1" checked>
+        <input type="radio" name="slides" id="slide2">
+        <input type="radio" name="slides" id="slide3">
+
+        <!-- Slides -->
+        <div class="slides">
+            <div class="slide">
+                <img src="imagen1.jpg" alt="Imagen 1">
+                <div class="slide-content">
+                    <h2>Bienvenido al carrusel</h2>
+                    <p>Primera imagen</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imagen2.jpg" alt="Imagen 2">
+                <div class="slide-content">
+                    <h2>Segunda imagen</h2>
+                    <p>Texto 2</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imagen3.jpg" alt="Imagen 3">
+                <div class="slide-content">
+                    <h2>Tercera imagen</h2>
+                    <p>Texto 3</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flechas -->
+        <div class="arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+        <div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+
+        <!-- Dots -->
+        <div class="nav-dots">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+        </div>
+    </div>
+
+    <script>
+        let index = 1;
+        const totalSlides = 3;
+
+        function showSlide(n) {
+            document.getElementById("slide" + n).checked = true;
+            index = n;
+        }
+
+        function nextSlide() {
+            index = index < totalSlides ? index + 1 : 1;
+            showSlide(index);
+        }
+
+        function prevSlide() {
+            index = index > 1 ? index - 1 : totalSlides;
+            showSlide(index);
+        }
+
+        // Autoplay opcional
+        setInterval(() => {
+            nextSlide();
+        }, 5000);
+    </script>
+</body>
+
+</html>

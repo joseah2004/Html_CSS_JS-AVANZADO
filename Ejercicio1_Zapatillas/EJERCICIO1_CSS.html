@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Zapatillas Urbanas</title>
+  <link rel="icon" href="Logo.jpg" type="image/jpeg">
+
+  <style>
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+h1, h2, h3 {
+  color: #111;
+}
+
+a {
+  color: #0078D7;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ======== HEADER ======== */
+header {
+  background: #111;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+header h1 {
+  color: white;
+}
+
+/* ======== NAV ======== */
+nav {
+  background: #222;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+/* ======== MAIN ======== */
+main {
+  display: flex;
+  margin: 20px;
+}
+
+section {
+  flex: 3;
+  padding: 10px;
+}
+
+article {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+aside {
+  flex: 1;
+  background: #fafafa;
+  padding: 15px;
+  margin-left: 20px;
+  border-left: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+/* ======== TABLA ======== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+/* ======== GALERÍA ======== */
+.galeria {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px;
+}
+.galeria figure {
+  text-align: center;
+  width: 30%;
+}
+
+/* ======== FORMULARIO ======== */
+form {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 500px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background: #0078D7;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background: #005ea0;
+}
+
+/* ======== IFRAME ======== */
+iframe {
+  display: block;
+  margin: 30px auto;
+  border: none;
+  border-radius: 10px;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+footer a {
+  color: #FFD700;
+}
+
+#toggleGaleria {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #0078D7, #00BFFF);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <img src="Logo.jpg" alt="Logo de Zapatillas Urbanas">
+      <h1>Zapatillas Urbanas</h1>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#noticias">Noticias</a>
+    <a href="#modelos">Modelos</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main>
+    <section id="noticias">
+      <h2>Últimas Noticias</h2>
+      <article>
+        <h3>Adidas gazelle</h3>
+        <img src="Zapa1.png" alt="Zapatillas UrbanX StreetWave">
+        <p>Las nuevas zapatillas UrbanX StreetWave combinan diseño urbano con materiales reciclados. Una apuesta por la moda sostenible y vibrante.</p>
+        <a href="https://www.adidas.es/" target="_blank">Leer más</a>
+      </article>
+
+      <article>
+        <h3>Nike Dunk Panda</h3>
+        <img src="Zapa2.jpg" alt="Zapatillas RetroVibe Vintage">
+        <p>La nueva línea RetroVibe Vintage trae de vuelta la estética noventera con suelas gruesas y colores pastel. Perfectas para los nostálgicos del streetwear.</p>
+        <a href="https://www.nike.com/es/" target="_blank">Leer más</a>
+      </article>
+    </section>
+
+    <section id="modelos">
+      <h2>Comparativa de Modelos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Tipo</th>
+            <th>Disponibilidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>UrbanX StreetWave</td><td>€89.99</td><td>Urbana ecológica</td><td>Disponible</td></tr>
+          <tr><td>RetroVibe Vintage</td><td>€74.50</td><td>Retro casual</td><td>Disponible</td></tr>
+          <tr><td>SkyStep Runner</td><td>€99.00</td><td>Deportiva ligera</td><td>Agotado</td></tr>
+          <tr><td>BoldKicks Neon</td><td>€65.00</td><td>Urbana juvenil</td><td>Disponible</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <aside>
+      <h2>Enlaces de interés</h2>
+      <ul>
+        <li><a href="https://www.nike.com" target="_blank">Nike Oficial</a></li>
+        <li><a href="https://www.adidas.es" target="_blank">Adidas España</a></li>
+        <li><a href="https://eu.puma.com" target="_blank">Puma</a></li>
+      </ul>
+      <h2>Promoción</h2>
+      <img src="Zapa3.jpg" alt="Zapatilla promocional con diseño llamativo">
+    </aside>
+  </main>
+
+<section id="galeria">
+  <h2>Galería de productos</h2>
+   <button id="toggleGaleria"> <!--lo he modificado para que salga mejor -->
+  👟 Mostrar/Ocultar Galería
+</button>
+
+
+  <div id="contenedorGaleria">
+    <div class="galeria">
+      <figure>
+        <img src="Zapa4.jpg" alt="Nike Air Zoom" width="300" height="300">
+        <figcaption><strong>Nike Air Zoom</strong><br>Diseño aerodinámico y rendimiento ligero</figcaption>
+      </figure>
+
+      <figure>
+        <img src="Zapa5.jpg" alt="Adidas ZX Neon" width="300" height="300">
+        <figcaption><strong>Adidas ZX Neon</strong><br>Estilo urbano con tonos pastel</figcaption>
+      </figure>
+
+      <figure>
+        <img src="Zapa6.jpg" alt="Puma RS-X" width="300" height="300">
+        <figcaption><strong>Puma RS-X</strong><br>Silueta robusta y moderna</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+  <section id="contacto">
+  <h2>Formulario de contacto</h2>
+  <form id="formularioContacto" action="#" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <label for="tipo">Tipo de zapatilla favorita:</label>
+    <select id="tipo" name="tipo">
+      <option value="running">Running</option>
+      <option value="urbana">Urbana</option>
+      <option value="retro">Retro</option>
+      <option value="ecologica">Ecológica</option>
+    </select>
+
+    <label for="comentarios">Comentarios:</label>
+    <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios aquí..."></textarea>
+
+    <input type="submit" value="Enviar">
+  </form>
+</section>
+
+  <section id="video">
+  <h2>Spot publicitario destacado</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/8euSjlN2jd4" title="Nike Air Futurista" allowfullscreen></iframe>
+  </section>
+
+  <footer>
+  <p>&copy; 2025 Zapatillas Urbanas - Todos los derechos reservados.</p>
+  <p>Síguenos en 
+    <a href="https://www.instagram.com" target="_blank">Instagram</a> | 
+    <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
+    <a href="https://www.twitter.com" target="_blank">Twitter</a>
+  </p>
+</footer>
+<script>
+// Mensaje de bienvenida al cargar la página 1
+window.onload = function() {
+  alert("¡Bienvenido a Zapatillas Urbanas!");
+};
+
+// Mostrar/Ocultar galería 2
+const botonGaleria = document.querySelector("#toggleGaleria");
+const galeria = document.querySelector("#contenedorGaleria");
+
+botonGaleria.addEventListener("click", function() {
+  if (galeria.style.display === "none") {
+    galeria.style.display = "block";
+  } else {
+    galeria.style.display = "none";
+  }
+});
+
+
+// Validación del formulario de contacto 3
+const formulario = document.getElementById("formularioContacto");
+
+formulario.addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
+  const nombre = document.getElementById("nombre").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const tipo = document.getElementById("tipo").value;
+  const comentarios = document.getElementById("comentarios").value.trim();
+
+  if (nombre !== "" && correo !== "" && tipo !== "" && comentarios !== "") {
+    alert("¡Formulario enviado correctamente!");
+    formulario.reset();
+  } else {
+    alert("Por favor, completa todos los campos antes de enviar.");
+  }
+});
+
+</script>
+
+</body>
+</html>
+      

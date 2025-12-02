@@ -1,0 +1,20 @@
+[
+  {
+    "titulo": "Interstellar",
+    "anio": 2014,
+    "imagen": "interstellar.jpg",
+    "genero": "Ciencia ficción"
+  },
+  {
+    "titulo": "Inception",
+    "anio": 2010,
+    "imagen": "inception.jpg",
+    "genero": "Acción"
+  },
+  {
+    "titulo": "The Dark Knight",
+    "anio": 2008,
+    "imagen": "the-dark-knight.jpg",
+    "genero": "Superhéroes"
+  }
+]

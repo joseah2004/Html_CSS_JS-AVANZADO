@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+   <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>
+        <a href="#">Institutos</a>
+        <ul>
+          <li><a href="instituto1.html">IES Alonso de Avellaneda</a></li>
+          <li><a href="instituto2.html">IES Cervantes</a></li>
+          <li><a href="instituto3.html">IES San Isidro</a></li>
+          <li><a href="instituto4.html">IES Calderón de la Barca</a></li>
+        </ul>
+      </li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li>
+        <a href="contactos.html">Contacto</a>
+        <ul>
+          <li><a href="contactos.html#email">Email</a></li>
+          <li><a href="contactos.html#mapa">Mapa</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="contacto">
+      <h1 class="titulo-contacto">Contacto</h1>
+
+    <div class="contacto-derecha">
+      <div class="formulario-centro">
+        <h2>Envíanos un mensaje</h2>
+        <form>
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" required>
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="asunto">Asunto:</label>
+          <input type="text" id="asunto" name="asunto" required>
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Columna izquierda: título, email y mapa -->
+
+      <section id="email" class="info-email">
+        <h3>Email</h3>
+        <p>Puedes escribirnos a: 
+          <a href="mailto:info@instituto.es">info@instituto.es</a>
+        </p>
+      </section>
+
+      <section id="mapa" class="info-mapa">
+        <h3>Mapa</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.490!2d-3.703790!3d40.416775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228c2f0f0f0f%3A0x123456789abcdef!2sMadrid!5e0!3m2!1ses!2ses!4v1234567890"
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

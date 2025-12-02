@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog Dinámico</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      flex: 1 1 200px;
+      background-color: #01193d;
+      padding: 16px;
+      border-right: 1px solid #ccc;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: #e9ebee;
+      border: none;
+      margin: 8px 0 16px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      padding: 10px 13px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+      color: #fff;
+    }
+
+    .sidebar li:hover:not(.active) {
+      background-color: #0a2f66;
+    }
+
+    .sidebar li.active {
+      color: #116cc7;
+    }
+
+    .main-content {
+      flex: 3 1 400px;
+      padding: 32px;
+      background-color: #e6f0fa;
+    }
+
+    .main-content h2 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #0a6fd4;
+    }
+
+    .article-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 16px 19px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .article-card:hover {
+      transform: scale(1.02);
+    }
+
+    .article-card h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      color: #0a2a5f;
+    }
+
+    .article-card p {
+      margin: 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    @media (max-width: 1005px) {
+      .container {
+        flex-direction: column;
+        min-height: 20px;
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Categorías</h2>
+      <div class="divider"></div>
+      <ul id="categoryList">
+        <li data-category="tecnologia">Tecnología</li>
+        <li data-category="educacion">Educación</li>
+        <li data-category="salud">Salud</li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <h2>Artículos</h2>
+      <div id="articlesContainer"></div>
+    </main>
+  </div>
+
+  <script>
+    const data = {
+      tecnologia: [
+        { title: "La IA revoluciona el mundo", text: "Descubre cómo la inteligencia artificial está cambiando industrias completas." },
+        { title: "5 gadgets del futuro", text: "Innovaciones tecnológicas que transformarán tu día a día." }
+      ],
+      educacion: [
+        { title: "Aprendizaje híbrido", text: "La nueva forma de combinar educación presencial y virtual." },
+        { title: "Herramientas digitales para docentes", text: "Cómo aprovechar la tecnología para mejorar tus clases." }
+      ],
+      salud: [
+        { title: "Alimentos que fortalecen el sistema inmune", text: "Guía práctica para mejorar tu salud." },
+        { title: "La importancia del descanso", text: "Dormir bien mejora la memoria, la energía y la concentración." }
+      ]
+    };
+
+    const categoryList = document.getElementById('categoryList');
+    const articlesContainer = document.getElementById('articlesContainer');
+
+    function renderArticles(category) {
+      articlesContainer.innerHTML = '';
+      data[category].forEach(article => {
+        const div = document.createElement('div');
+        div.className = 'article-card';
+        div.innerHTML = `<h3>${article.title}</h3><p>${article.text}</p>`;
+        articlesContainer.appendChild(div);
+      });
+
+      categoryList.querySelectorAll('li').forEach(li => {
+        li.classList.remove('active');
+        if (li.dataset.category === category) {
+          li.classList.add('active');
+        }
+      });
+    }
+
+    categoryList.querySelectorAll('li').forEach(li => {
+      li.addEventListener('click', () => {
+        renderArticles(li.dataset.category);
+      });
+    });
+
+    renderArticles('tecnologia');
+  </script>
+</body>
+
+</html>

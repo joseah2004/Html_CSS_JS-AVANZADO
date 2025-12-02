@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interfaz con pestañas</title>
+  <style>
+    :root {
+      --tabs-border-color: #ABCDEF;
+      --tabs-border-size: 1px;
+      --tabs-text-color: white;
+      --tabs-dark-color: #012345;
+      --tabs-lite-color: #194775;
+      --tabs-width: 120px;
+      --tabs-height: 40px;
+      --content-bg-color: #194775;
+      --content-text-color: white;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .tabs {
+      border-top: var(--tabs-border-size) solid var(--tabs-border-color);
+      color: var(--tabs-text-color);
+    }
+
+    .tab-container {
+      position: relative;
+      padding-top: var(--tabs-height);
+      height: calc(100vh - var(--tabs-height));
+    }
+
+    .tab-content {
+      display: none;
+       height: calc(100vh - var(--tabs-height));
+      background-color: var(--content-bg-color);
+      color: var(--content-text-color);
+      overflow-y: auto;
+      border: 1px solid var(--tabs-border-color);
+      box-shadow: 0 2px 8px rgba(248, 244, 244, 0.1);
+     
+    }
+
+    .tab-content h2 {
+      padding: 1em 1em 0 1em;
+      font-size: 24px;
+      color: var(--tabs-text-color);
+    }
+
+    .tab-content p {
+      padding: 1em;
+      line-height: 1.6;
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .tab:target .tab-content {
+      display: block;
+    }
+
+    .tab:target > a {
+      background-color: var(--tabs-lite-color);
+      z-index: 200;
+    }
+
+    #tab1 > a { --tabs-position: 0; }
+    #tab2 > a { --tabs-position: 1; }
+    #tab3 > a { --tabs-position: 2; }
+
+    .tab > a {
+      text-align: center;
+      position: absolute;
+      width: var(--tabs-width);
+      height: calc(var(--tabs-height) + var(--tabs-border-size));
+      top: 0;
+      left: calc(var(--tabs-width) * var(--tabs-position));
+      line-height: var(--tabs-height);
+      background-color: var(--tabs-dark-color);
+      color: var(--tabs-text-color);
+      text-decoration: none;
+      border: var(--tabs-border-size) solid var(--tabs-border-color);
+      border-bottom: none;
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
+
+    /* Mostrar Científico por defecto si no hay target */
+    body:not(:has(:target)) #tab1 .tab-content {
+      display: block;
+    }
+    body:not(:has(:target)) #tab1 > a {
+      background-color: var(--tabs-lite-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <div class="tab-container">
+      <div id="tab1" class="tab">
+        <a href="#tab1">Científico</a>
+        <div class="tab-content">
+          <h2>Textos científicos</h2>
+          <p>Son textos que comunican conocimientos científicos de forma clara y precisa, y suelen aparecer en artículos, informes y publicaciones académicas. Se caracterizan por el uso de un lenguaje técnico, objetivo y verificable, evitando ambigüedades y asegurando que la información pueda ser contrastada. Estos textos presentan datos comprobables, utilizan citas y referencias bibliográficas, siguen una estructura lógica que incluye introducción, metodología, resultados, discusión y conclusiones, y buscan difundir avances en el conocimiento. Entre los géneros científicos se encuentran los artículos de investigación, las tesis, las monografías, los informes técnicos, los manuales especializados y los textos de divulgación científica, que pueden dirigirse tanto a especialistas como al público general dependiendo de su nivel de complejidad. Su finalidad es contribuir al desarrollo del saber y garantizar que los hallazgos se transmitan de manera clara y ordenada.</p>
+        </div>
+      </div>
+      <div id="tab2" class="tab">
+        <a href="#tab2">Jurídicos</a>
+        <div class="tab-content">
+          <h2>Textos jurídicos</h2>
+          <p>Son documentos legales como leyes, contratos, sentencias y normativas, que utilizan un lenguaje técnico, formal y preciso, ya que buscan regular conductas y establecer derechos y obligaciones. Se redactan con fórmulas fijas, emplean terminología jurídica especializada, tienen validez oficial y suelen estar vinculados a instituciones del Estado o a relaciones privadas reguladas por la ley. Entre los géneros jurídicos se encuentran las constituciones, los códigos, los reglamentos, los contratos laborales, las escrituras notariales, las demandas, las resoluciones judiciales y los dictámenes, todos ellos con la finalidad de garantizar la seguridad jurídica y la correcta aplicación de la ley. Estos textos son fundamentales para la organización social, pues establecen normas de convivencia, delimitan responsabilidades y aseguran que las relaciones entre individuos e instituciones se desarrollen dentro de un marco legal reconocido y respetado.</p>
+        </div>
+      </div>
+      <div id="tab3" class="tab">
+        <a href="#tab3">Periodístico</a>
+        <div class="tab-content">
+          <h2>Textos periodísticos</h2>
+          <p>Son aquellos cuya finalidad va desde informar a opinar: la información y la opinión son sus géneros principales, siempre sobre hechos y temas de interés general. Estos textos se recogen en la prensa escrita y en la prensa oral. Además de informar, también se permiten opiniones o críticas sobre ciertos hechos, valoraciones, comportamientos y actitudes, incluso a veces se da espacio a cuestiones lúdicas. Características de los textos periodísticos: Se trata de textos muy heterogéneos, que pueden ofrecer información nacional, internacional, local, deportiva, etc. Por esta razón los periódicos están divididos en secciones. Tanto el emisor como el receptor tienen un carácter colectivo. La relación entre emisor y receptor es unidireccional, pues no se espera respuesta. El texto periodístico informativo aparece en distintos géneros progresivamente cada vez más subjetivos, como la noticia, el reportaje, la crónica, la entrevista periodística y la nota de opinión. Entre los géneros periodísticos de opinión destacan el artículo o columna, el editorial, la crítica (deportiva, teatral, cinematográfica, artística, musical, televisiva, taurina...), el chiste gráfico, etcétera. La frontera entre estos géneros tiende a ser difusa, ya que un texto periodístico puede combinar la noticia con la entrevista, por ejemplo, o combinar dos o tres lenguajes, como por ejemplo la escritura, la fotografía y la infografía. Y ya.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
