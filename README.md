@@ -42,6 +42,10 @@ El proyecto incluye:
 ## 📊 Lenguajes usados en este repositorio
 <br>
 
-![Top Langs](https://github-readme-stats-one-bice.vercel.app/api/top-langs/?username=joseah2004&repo=Html_CSS_JS-AVANZADO&layout=compact&theme=tokyonight)
+## 📂 Estadísticas del repositorio Html_CSS_JS-AVANZADO
+
+<p align="center">
+  <img src="https://github-readme-stats-one-bice.vercel.app/api/pin/?username=joseah2004&repo=Html_CSS_JS-AVANZADO&theme=tokyonight" alt="Repo Stats"/>
+</p>
 
 <br><br>
