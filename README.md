@@ -29,7 +29,7 @@ El proyecto incluye:
 ---
 <br>
 
-## 🖼️ Vista previa del proyecto
+
 
 <br>
 <p align="center">
