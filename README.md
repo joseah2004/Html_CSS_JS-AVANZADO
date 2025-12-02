@@ -11,6 +11,7 @@ El proyecto incluye:
 - **CSS3 avanzado** con animaciones, transiciones y diseño responsivo.
 - **JavaScript avanzado**
 <br>
+
 ## ⚙️ Tecnologías utilizadas
 - **HTML5**  
 - **CSS3** (Flexbox, Grid, Animaciones, Transiciones)  
@@ -27,7 +28,9 @@ El proyecto incluye:
 
 ---
 <br>
+
 ## 🖼️ Vista previa del proyecto
+
 <br>
 <p align="center">
   <img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png" alt="Logo HTML5" width="90"/>
@@ -38,5 +41,7 @@ El proyecto incluye:
 
 ## 📊 Lenguajes usados en este repositorio
 <br>
+
 ![Top Langs](https://github-readme-stats-one-bice.vercel.app/api/top-langs/?username=joseah2004&repo=Html_CSS_JS-AVANZADO&layout=compact&theme=tokyonight)
+
 <br><br>
