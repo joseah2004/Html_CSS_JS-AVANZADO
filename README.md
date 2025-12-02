@@ -38,14 +38,3 @@ El proyecto incluye:
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Logo JavaScript" width="90"/>
 </p>
 <br>
-
-## 📊 Lenguajes usados en este repositorio
-<br>
-
-## 📂 Estadísticas del repositorio Html_CSS_JS-AVANZADO
-
-<p align="center">
-  <img src="https://github-readme-stats-one-bice.vercel.app/api/pin/?username=joseah2004&repo=Html_CSS_JS-AVANZADO&theme=tokyonight" alt="Repo Stats"/>
-</p>
-
-<br><br>
